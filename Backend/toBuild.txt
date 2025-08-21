@@ -1,0 +1,7 @@
+- fetch user's whole data from github
+- create a resume using JD and github data
+    - pick relevant projects according to JD
+    - write relevant skills by reading the readme/code
+    - create resume using user's info + projects + skills
+- logs the application to google sheets as (company, role, date, status)
+- scrape careers pages and job portal
