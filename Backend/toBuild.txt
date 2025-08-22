@@ -1,6 +1,12 @@
-- fetch user's whole data from github
+- fetch user's whole data from github which includes:
+    - readme of repos
+    - code to review it's quality like tests, containerization, CI/CD, 
+    - commits 
+
+
 - create a resume using JD and github data
     - pick relevant projects according to JD
+    - pick contributions according to JD
     - write relevant skills by reading the readme/code
     - create resume using user's info + projects + skills
 - logs the application to google sheets as (company, role, date, status)

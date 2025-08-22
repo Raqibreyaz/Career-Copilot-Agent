@@ -1,0 +1,4 @@
+issue: 3n+1 total calls (n = no of repos), which explodes bill + increases 
+       time
+  fix: doing api calls in batches instead of for every repo, removed 
+       redundant api calling for already fetched some data like first scoring every repo relevance according to JD then again creating description by another api call will be redundant so we reduced it to one call

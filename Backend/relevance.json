@@ -2,161 +2,487 @@
     "user_info": {
         "github_username": "Raqibreyaz"
     },
-    "skills": [],
+    "skills": [
+        "@sendgrid/mail",
+        "API Development",
+        "Algorithms",
+        "Authentication",
+        "Authentication (JWT)",
+        "Back-End Web Development",
+        "Back-end Web Development",
+        "Backend Development",
+        "Bcrypt",
+        "C",
+        "C++",
+        "CORS",
+        "CRUD",
+        "CSS",
+        "Cloudinary",
+        "Context API",
+        "Cookie Parser",
+        "D3.js",
+        "Data Handling",
+        "Data Structures",
+        "Data persistence",
+        "Django",
+        "Docker",
+        "Dockerfile",
+        "EJS",
+        "ES6 Modules",
+        "ESLint",
+        "Express",
+        "Express File Upload",
+        "Express.js",
+        "File Encryption",
+        "File I/O",
+        "Front-End Development",
+        "Front-end Development",
+        "Frontend Development",
+        "Graphs",
+        "HTML",
+        "HTML parsing",
+        "HTTP",
+        "HTTPS",
+        "Inter-Process Communication",
+        "JWT",
+        "JWT Authentication",
+        "JavaScript",
+        "Jinja2",
+        "LinkedList",
+        "MERN stack",
+        "MongoDB",
+        "Mongoose",
+        "Mongoose-paginate-v2",
+        "Multer",
+        "Multi-threading",
+        "Networking",
+        "Next.js",
+        "Node.js",
+        "ORM",
+        "Object-Oriented Programming",
+        "OpenSSL",
+        "Payment Integration (Razorpay)",
+        "Python",
+        "Queues",
+        "REST API",
+        "REST API (interaction with backend)",
+        "REST API Consumption",
+        "React",
+        "React Hook Form",
+        "React Icons",
+        "React Router",
+        "React.js",
+        "Redux Toolkit",
+        "Rollup",
+        "SQL",
+        "Sockets",
+        "Stacks",
+        "Tailwind CSS",
+        "TinyMCE",
+        "Trees",
+        "TypeScript",
+        "UI Design",
+        "UUID",
+        "Web Development",
+        "bcrypt",
+        "bcryptjs",
+        "cookie-parser",
+        "cors",
+        "dotenv",
+        "express-fileupload",
+        "jsonwebtoken",
+        "react-hook-form",
+        "react-redux",
+        "react-router-dom",
+        "tailwindcss",
+        "validator",
+        "vite"
+    ],
     "projects": [
         {
-            "name": "AlgoVerse",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "appscrip-task-raquibreyaz",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "Hospital-Management",
+            "skills": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "React.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "MERN stack",
+                "REST API",
+                "JWT",
+                "Authentication",
+                "Tailwind CSS",
+                "Context API",
+                "Express File Upload",
+                "Cloudinary",
+                "Mongoose"
+            ],
+            "relevance_score": 0.9,
+            "reasoning": "The repository is a MERN stack (MongoDB, Express.js, React.js, Node.js) Hospital Management System. It involves both front-end (React, HTML, CSS, Tailwind CSS) and back-end (Node.js, Express.js, MongoDB) development, aligning well with the job description's requirements for back-end web development, front-end skills, and programming knowledge. The use of REST APIs, JWT for authentication, and database interaction (MongoDB) further increases relevance."
         },
         {
             "name": "Backend",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "JavaScript",
+                "EJS",
+                "CSS",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Mongoose",
+                "Back-end Web Development",
+                "API Development",
+                "Authentication",
+                "REST API"
+            ],
+            "relevance_score": 0.85,
+            "reasoning": "The repository demonstrates backend web development skills using Node.js, Express, and MongoDB, aligning with the internship's requirements for backend development, programming, and OOP. It showcases API development and authentication, which are relevant to the role. The mention of React and Node.js in the job description strengthens the match."
         },
         {
             "name": "Banaras-Mart-Backend",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "Banaras-Mart-Frontend",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "beginner-projects",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "JavaScript",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Mongoose",
+                "REST API",
+                "Authentication (JWT)",
+                "Payment Integration (Razorpay)",
+                "Cloudinary",
+                "Backend Development",
+                "Cookie Parser",
+                "CORS",
+                "Bcrypt",
+                "@sendgrid/mail",
+                "Multer",
+                "Mongoose-paginate-v2",
+                "UUID"
+            ],
+            "relevance_score": 0.85,
+            "reasoning": "The repository is a backend for an e-commerce platform, using Node.js, Express.js, and MongoDB, which aligns well with the job description's requirements for backend web development, programming, and object-oriented programming. It also demonstrates experience with REST APIs, authentication, and database interactions. The job description mentions familiarity with React and Node.js, and while the backend itself doesn't use React, it's designed to interact with a React frontend (as indicated in the README). The listed dependencies and code summary contain technologies mentioned in the job description. It uses relevant databases like mongoDB and implements payment solutions like razorpay."
         },
         {
             "name": "BlogBackend",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "TypeScript",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Mongoose",
+                "REST API",
+                "JWT Authentication",
+                "bcryptjs",
+                "Multer",
+                "Cloudinary",
+                "Cookie Parser",
+                "CORS",
+                "Backend Development",
+                "API Development",
+                "Data persistence",
+                "jsonwebtoken"
+            ],
+            "relevance_score": 0.85,
+            "reasoning": "The repository demonstrates back-end web development skills using Node.js, Express, and MongoDB/Mongoose which aligns well with the job description's requirements for back-end development, software development, and object-oriented programming. The use of JWT for authentication, Multer/Cloudinary for image uploads, and overall API design further supports the relevance. TypeScript is a plus."
         },
         {
             "name": "BlogFrontend",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "React",
+                "TypeScript",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Redux Toolkit",
+                "React Hook Form",
+                "REST API (interaction with backend)",
+                "Authentication",
+                "React Router",
+                "HTML parsing",
+                "TinyMCE",
+                "Frontend Development"
+            ],
+            "relevance_score": 0.85,
+            "reasoning": "The repository demonstrates strong alignment with the job description. It showcases frontend development skills using React, TypeScript, and related technologies. The project involves backend interaction (REST API), user authentication, and implements core frontend functionalities needed for a blog application, all aligning well with the desired skills for the Software Engineer Intern role. The project lacks Node.js but focuses on frontend skills listed in the Job description."
         },
         {
-            "name": "CipherForge",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "HospitalManagementBackend",
+            "skills": [
+                "JavaScript",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Mongoose",
+                "REST API",
+                "JWT",
+                "Authentication",
+                "Back-end Web Development",
+                "bcrypt",
+                "cookie-parser",
+                "cors",
+                "dotenv",
+                "express-fileupload",
+                "validator",
+                "Cloudinary"
+            ],
+            "relevance_score": 0.85,
+            "reasoning": "The repository is a Node.js/Express.js backend for a hospital management system, using MongoDB. It implements REST APIs, authentication (JWT, bcrypt), and other middleware like CORS, cookie parsing, and file uploads. It aligns very well with the back-end web development, programming, and OOP requirements of the internship, as well as the familiarity with Node.js that is beneficial. The stack is very relevant. "
         },
         {
-            "name": "Cpp-Deep-Dive",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "CSS",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "appscrip-task-raquibreyaz",
+            "skills": [
+                "TypeScript",
+                "CSS",
+                "JavaScript",
+                "React",
+                "Next.js",
+                "React Icons",
+                "Front-end Development",
+                "Web Development",
+                "ESLint"
+            ],
+            "relevance_score": 0.75,
+            "reasoning": "The repository demonstrates front-end web development skills using React and Next.js, which aligns with the internship's requirements. The project's structure includes components and sub-components typical of modern web applications. The languages used (TypeScript, CSS, JavaScript) match front-end web development. No back-end or OOP is apparent."
         },
         {
             "name": "Django-Twitter",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "Python",
+                "Django",
+                "HTML",
+                "SQL",
+                "CRUD",
+                "ORM",
+                "Jinja2",
+                "Backend Development",
+                "Web Development",
+                "Object-Oriented Programming",
+                "Authentication"
+            ],
+            "relevance_score": 0.75,
+            "reasoning": "The repository showcases backend web development using Django (Python), HTML, and SQL, aligning with the job description's focus on backend development, OOP, and web development skills. The project implements CRUD operations and uses an ORM, demonstrating relevant experience. Familiarity with Python is a definite plus."
         },
         {
-            "name": "docker-getting-started",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "HandlingApis",
+            "skills": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Back-End Web Development",
+                "Front-End Development",
+                "Express",
+                "React",
+                "REST API"
+            ],
+            "relevance_score": 0.75,
+            "reasoning": "The repository demonstrates back-end (Express) and front-end (React) web development skills, handling APIs, and using JavaScript, HTML, and CSS, which aligns well with the job description's requirements."
+        },
+        {
+            "name": "Banaras-Mart-Frontend",
+            "skills": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "React",
+                "Redux Toolkit",
+                "react-router-dom",
+                "react-hook-form",
+                "tailwindcss",
+                "vite",
+                "react-redux",
+                "REST API Consumption",
+                "Front-End Development"
+            ],
+            "relevance_score": 0.7,
+            "reasoning": "The repository is a React-based e-commerce frontend, demonstrating skills in front-end development, React, and state management (Redux Toolkit). It also includes related technologies like routing, form handling, and styling. It is highly relevant to front-end and general software development skills mentioned in the job description, including familiarity with React. Lacks Back-End skills."
         },
         {
             "name": "dockerfile-optimism",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "Dockerfile",
+                "TypeScript",
+                "Express",
+                "Node.js",
+                "Backend Development",
+                "Docker"
+            ],
+            "relevance_score": 0.7,
+            "reasoning": "The repository uses Dockerfile for containerization, TypeScript and Node.js with Express, which are relevant to backend development and some overlap with the preferred skills (Node.js). Indicates backend focus."
         },
         {
-            "name": "Download-Manager",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "AlgoVerse",
+            "skills": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Data Structures",
+                "Algorithms",
+                "D3.js",
+                "ES6 Modules",
+                "Rollup",
+                "Stacks",
+                "Queues",
+                "Graphs",
+                "Trees",
+                "LinkedList"
+            ],
+            "relevance_score": 0.6,
+            "reasoning": "The repository demonstrates strong programming skills (JavaScript) and understanding of data structures and algorithms, which aligns with the job description's requirements for software development, programming, and OOP knowledge. The project showcases back-end concepts through its implementation of data structures, and potentially front-end skills with interactive visualizations. While it doesn't directly relate to Node.js or React, the core programming and algorithmic skills are highly relevant."
+        },
+        {
+            "name": "docker-getting-started",
+            "skills": [
+                "JavaScript",
+                "Dockerfile",
+                "Docker",
+                "HTTP"
+            ],
+            "relevance_score": 0.5,
+            "reasoning": "The repository uses JavaScript and Docker, both of which are relevant to the back-end web development and software development aspects of the job description. Docker skills are useful for deployment and containerization, however the project lacks explicit front-end technologies, OOP examples, or uses of React/Node.js as mentioned in the JD. HTTP is also relevant for web development."
         },
         {
             "name": "DSA-Practice",
-            "skills": [],
-            "relevance_score": 0.0
+            "skills": [
+                "C++",
+                "TypeScript",
+                "Data Structures",
+                "Algorithms"
+            ],
+            "relevance_score": 0.5,
+            "reasoning": "The repository focuses on Data Structures and Algorithms (DSA) practice, which is relevant to programming and problem-solving skills mentioned in the job description. TypeScript is also present. However, there is no explicit mention of back-end web development, React, or Node.js. The code summary shows limited TypeScript usage with DSA-related functions. Therefore, relevance is moderate."
         },
         {
-            "name": "DSA-Preparation",
-            "skills": [],
-            "relevance_score": 0.0
+            "name": "beginner-projects",
+            "skills": [
+                "CSS",
+                "HTML",
+                "JavaScript",
+                "Front-End Development"
+            ],
+            "relevance_score": 0.4,
+            "reasoning": "The repository demonstrates front-end skills (HTML, CSS, JavaScript) and contains projects like a Tic-Tac-Toe game, which aligns with basic programming concepts. The job description requires familiarity with React and Node.js, which are not present in the repository. It also requires Backend which is missing in this repository."
+        },
+        {
+            "name": "CipherForge",
+            "skills": [
+                "C++",
+                "Object-Oriented Programming",
+                "Multi-threading",
+                "File Encryption"
+            ],
+            "relevance_score": 0.4,
+            "reasoning": "The repository demonstrates strong OOP skills in C++, aligning with the job description's requirements. However, it lacks direct relevance to web development (back-end or front-end) and Node.js/React which are also mentioned in the description. While programming skills are relevant, the focus on C++ encryption makes it moderately relevant."
+        },
+        {
+            "name": "CSS",
+            "skills": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Front-End Development",
+                "UI Design"
+            ],
+            "relevance_score": 0.4,
+            "reasoning": "The repository primarily focuses on front-end development (HTML, CSS, JavaScript), aligning with the front-end and potentially some back-end web development aspects of the job description. The lack of back-end technologies and frameworks mentioned in the JD (React, Node.js) reduces the overall relevance."
+        },
+        {
+            "name": "Cpp-Deep-Dive",
+            "skills": [
+                "C++",
+                "Object-Oriented Programming"
+            ],
+            "relevance_score": 0.3,
+            "reasoning": "The repository focuses on C++, which aligns with the OOP requirement in the job description. However, it lacks web development aspects (backend, frontend, React, Node.js) which are key requirements, lowering its relevance."
+        },
+        {
+            "name": "Download-Manager",
+            "skills": [
+                "C++",
+                "HTTP",
+                "HTTPS",
+                "Sockets",
+                "OpenSSL",
+                "Networking",
+                "Data Handling",
+                "File I/O"
+            ],
+            "relevance_score": 0.3,
+            "reasoning": "The repository showcases strong programming skills and experience with network protocols (HTTP/HTTPS) which are valuable. However, the primary language is C++, while the job description mentions familiarity with React and Node.js. Backend web development is mentioned but the stack is different, reducing relevance."
+        },
+        {
+            "name": "HTML",
+            "skills": [
+                "HTML",
+                "CSS"
+            ],
+            "relevance_score": 0.2,
+            "reasoning": "The repository focuses on HTML and CSS, which are relevant to front-end development mentioned in the job description. However, the repository lacks evidence of back-end skills, object-oriented programming, or the specified technologies like React and Node.js, making it only marginally relevant."
+        },
+        {
+            "name": "Interprocess-Communication-FIFO",
+            "skills": [
+                "C",
+                "Inter-Process Communication"
+            ],
+            "relevance_score": 0.2,
+            "reasoning": "The repository demonstrates skills in C and inter-process communication, which are foundational programming concepts. However, the job description emphasizes back-end web development, React, and Node.js, which are absent in this repository. Hence, the relevance is low."
+        },
+        {
+            "name": "File-Content-Provider",
+            "skills": [
+                "C"
+            ],
+            "relevance_score": 0.1,
+            "reasoning": "The repository is primarily written in C, which is not explicitly mentioned in the job description's desired skills (React, Node.js, Back-end, OOP). The job description focuses on web development and the repository fingerprint doesn't give evidence of web development skills or backend systems, therefore, it's weakly relevant."
+        },
+        {
+            "name": "Git",
+            "skills": [
+                "HTML"
+            ],
+            "relevance_score": 0.1,
+            "reasoning": "The repository only contains HTML. The job description requires back-end and object-oriented programming skills, as well as familiarity with React and Node.js, which are not present in the repository."
         },
         {
             "name": "EchoWeave",
             "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "File-Content-Provider",
-            "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         },
         {
             "name": "Finance-Manager",
             "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         },
         {
             "name": "First-Chrome-Extension",
             "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         },
         {
             "name": "FlashCardBackend",
             "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         },
         {
             "name": "FlashCardFrontend",
             "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         },
         {
             "name": "FrontendWithBackend",
             "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "Git",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "HandlingApis",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "Hospital-Management",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "HospitalManagementBackend",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "HTML",
-            "skills": [],
-            "relevance_score": 0.0
-        },
-        {
-            "name": "Interprocess-Communication-FIFO",
-            "skills": [],
-            "relevance_score": 0.0
+            "relevance_score": 0.0,
+            "reasoning": "LLM error"
         }
     ],
     "stats": {
-        "public_repos": 30,
-        "followers": 0
+        "public_repos": 29
     }
 }
