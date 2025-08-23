@@ -16,10 +16,19 @@ class GitHubProfileService:
 
     async def build_profile(self, username: str, jd_text: str) -> Dict:
         repos = await self.fetcher.fetch_user_repos(username)
+
+        # TODO: remove repos which haven't any name or owner(invalid repos)
         repos = [r for r in repos if not r.get("fork") and not r.get("archived")]
 
+        # 2-way filtering
+        # fetching only repos which are provided in repos.json
+        # otherwise filtering based on required skills
+
+        # here repos will be filtered according to JD's required skills
+        filtered_repos = await self.analyzer.pre_filter_repos(repos,jd_text)
+
         # analyze (n repos → ~n/batch_size LLM calls)
-        projects = await self.analyzer.analyze_repos(repos, jd_text)
+        projects = await self.analyzer.analyze_repos(filtered_repos, jd_text)
 
         # aggregate skills from scored projects
         skills_set = set()

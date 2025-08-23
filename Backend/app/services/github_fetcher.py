@@ -46,6 +46,8 @@ class GitHubFetcher:
         self._save_cache()
         return repos
 
+    async def fetch_specific_repos(): pass
+
     async def fetch_repo_readme(self, owner: str, repo: str) -> str:
         key = f"readme:{owner}/{repo}"
         if key in self.cache:
@@ -147,7 +149,6 @@ class GitHubFetcher:
             self._save_cache()
             return dependencies
 
-
     async def download_repo_zip(self, owner: str, repo: str, ref = None) -> str:
         """
         Downloads repo zipball to a temp directory and returns the extracted path.
@@ -158,6 +159,12 @@ class GitHubFetcher:
 
         async with httpx.AsyncClient(follow_redirects=True,timeout=60) as client:
             resp = await client.get(url, headers=self.headers)
+
+            # fallback to master branch
+            if respo.status_code == 404:
+                if ref == 'main':
+                    return await self.download_repo_zip(owner,repo,ref='master')
+
             resp.raise_for_status()
             tmp_dir = tempfile.mkdtemp(prefix=f"{owner}_{repo}_")
             zip_path = os.path.join(tmp_dir, f"{repo}.zip")
@@ -172,7 +179,6 @@ class GitHubFetcher:
             entries = [os.path.join(tmp_dir, d) for d in os.listdir(tmp_dir)]
             top = next((e for e in entries if os.path.isdir(e)), tmp_dir)
             return top
-
 
     def put_cache(self, key: str, value: Any):
         self.cache[key] = value
