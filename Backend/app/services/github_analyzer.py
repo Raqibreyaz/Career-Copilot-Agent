@@ -8,7 +8,7 @@ import tempfile
 import shutil
 from typing import List, Dict, Optional, Tuple, Any
 from .gemini_client import Gemini
-from .code_extractors import summarize_repo_code,_safe_json_loads
+from .code_extractors import summarize_repo_code
 from .github_fetcher import GitHubFetcher
 
 class GitHubAnalyzer:
@@ -16,10 +16,6 @@ class GitHubAnalyzer:
         self.gemini = Gemini(api_key=llm_api_key)
         self.fetcher = fetcher
         self.batch_size = batch_size
-
-    async def _summarize_readme(self, readme: str) -> str:
-        prompt = f"Summarize the following README in <=5 sentences focusing on tech stack and functionality:\n\n{readme}"
-        return self.gemini.generate(prompt)
     
     async def build_repo_fingerprint(self, repo: Dict) -> Dict:
         """
@@ -88,57 +84,21 @@ class GitHubAnalyzer:
         self.fetcher.put_cache(cache_key, fingerprint)
         return fingerprint
 
-    async def score_repo_for_jd(self, fingerprint: Dict, jd_text: str) -> Dict:
-        """
-        Stage 2: LLM scoring using cached fingerprint.
-        """
-        name = fingerprint.get("name", "repo")
-        fingerprint_text = json.dumps(fingerprint, indent=2)
-
-        prompt = f"""
-            You are an expert technical recruiter and senior software engineer.
-            Decide how relevant this GitHub repository is to the Job Description.
-
-            Job Description:
-            {jd_text}
-
-            Repository Fingerprint (JSON):
-            {fingerprint_text}
-
-            Instructions:
-            1) Derive skills/technologies from dependencies, languages, code_summary (imports/functions/routes), and maturity signals.
-            2) Detect patterns like: REST API, SQL usage, authentication, microservices, queues, tests, CI/CD, containerization.
-            3) Score relevance strictly from 0.0 to 1.0 (float).
-            4) Output ONLY valid JSON in this exact schema:
-            {{
-            "name": "{name}",
-            "skills": ["list", "key", "skills"],
-            "relevance_score": 0.0,
-            "reasoning": "short concise explanation grounded in the fingerprint vs JD"
-            }}
-            """
-
-        try:
-            content = self.gemini.generate(prompt)
-            parsed = _safe_json_loads(content, fallback=None)
-            if isinstance(parsed, dict) and "name" in parsed:
-                return parsed
-            return {"name": name, "skills": [], "relevance_score": 0.0, "reasoning": "LLM parse failed"}
-        except Exception as e:
-            print(f"Scoring error for {name}: {e}")
-            return {"name": name, "skills": [], "relevance_score": 0.0, "reasoning": "LLM error"}
 
     async def analyze_repos(self, repos: List[Dict], jd_text: str) -> List[Dict]:
-        """
-        Full pipeline: Fingerprint → Score against JD.
-        Fingerprints are cached (keyed by pushed_at) and reused across JDs.
-        """
-        results = []
+        
+        # stage 1: fingerprints(JD-independent,persisted)
+        fingerprints:List[Dict] = []
         for repo in repos:
-            fingerprint = await self.build_repo_fingerprint(repo)
-            project_info = await self.score_repo_for_jd(fingerprint, jd_text)
-            results.append(project_info)
-            time.sleep(1.2)  # gentle rate-limiting for LLM/API
-        results.sort(key=lambda x: x.get("relevance_score", 0.0), reverse=True)
-        return results
+            fp = await self.build_repo_fingerprint(repo)
+            # project_info = await self.score_repo_for_jd(fingerprint, jd_text)
+            fingerprints.append(fp)
+
+        # stage 2: batch score against JD (LLM batching + internal caching)
+        scored = self.gemini.batch_score_repos(jd_text,fingerprints,batch_size=self.batch_size)
+
+        # sort by score desc
+        scored.sort(key=lambda x: x.get("relevance_score", 0.0), reverse=True)
+        
+        return scored
 
