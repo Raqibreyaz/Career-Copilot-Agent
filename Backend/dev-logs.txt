@@ -2,3 +2,7 @@ issue: 3n+1 total calls (n = no of repos), which explodes bill + increases
        time
   fix: doing api calls in batches instead of for every repo, removed 
        redundant api calling for already fetched some data like first scoring every repo relevance according to JD then again creating description by another api call will be redundant so we reduced it to one call
+
+issue: for efficient repo analysis we need to download whole repos, which can be 
+       time consuming and not storage efficient
+  fix: portia provides out of the box analysis in this case throughh it's cloud features, so then we dont need to download and parse repos manually
