@@ -1,13 +1,36 @@
-- fetch user's whole data from github which includes:
-    - readme of repos
-    - code to review it's quality like tests, containerization, CI/CD, 
-    - commits 
+- Summarize Provided JD, get the required skills and keywords
 
+- read .repoignore to ignore specific repos or files of them
 
-- create a resume using JD and github data
-    - pick relevant projects according to JD
-    - pick contributions according to JD
-    - write relevant skills by reading the readme/code
-    - create resume using user's info + projects + skills
-- logs the application to google sheets as (company, role, date, status)
-- scrape careers pages and job portal
+- walk on github for analysing relevant repos according to JD
+    - filter repo based on .repoignore or irrelevant prog. lang or dependencies used
+    - filter binary files like images, icons, video or ones which are to be skipped according to .repoignore
+    - detect libraries/frameworks used
+        - package.json for js/ts
+        - pyproject.toml/requirements.txt for python
+        - for c/c++
+        - for rust
+        - for go
+        - for ruby
+
+    - get languages used
+    - get readme content + description + topics
+    - detect use of .github/, Jenkinsfile, Dockerfile etc. for industry grade practices
+    - reading commits to know meaningfulness of commit messages
+    - 
+
+- creates jd-specific.json containing top relevant projects and technical skills according to JD
+    {
+        projects:
+            [{
+                name:"",start_date:"",end_date:"",summary:"",highligts:[""]
+            }],
+            skills:{
+                label:"",
+                details:""
+                }
+    }
+
+- basic-info.yaml includes basic user's info for all resumes
+
+- using rendercv uses the basic info .yaml file + jd-specific.json file and creates a final resume.yaml file, now this resume.yaml is checked for relavance as basic-info.yaml can have irrelavant skills also so a last time using LLM this file is corrected using JD and using rendercv the pdf resume is created using the resume.yaml file

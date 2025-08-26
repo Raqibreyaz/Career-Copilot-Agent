@@ -123,24 +123,24 @@ class Gemini:
             # batch prompt for the items that missed cache
             payload = [fp for _, fp, _ in to_score]
             prompt = f"""
-You are a senior engineer + technical recruiter. Score each repository vs the JD.
+            You are a senior engineer + technical recruiter. Score each repository vs the JD.
 
-Job Description:
-{jd_text}
+            Job Description:
+            {jd_text}
 
-Repositories (JSON list):
-{json.dumps(payload, indent=2)}
+            Repositories (JSON list):
+            {json.dumps(payload, indent=2)}
 
-Instructions:
-For each repo, return an array of JSON objects in the same order as input, one per repo, each with:
-{{
-  "name": "<repo name>",
-  "skills": ["list","key","skills"],
-  "relevance_score": 0.0,
-  "reasoning": "short, grounded explanation"
-}}
-Only return a valid JSON array.
-"""
+            Instructions:
+            For each repo, return an array of JSON objects in the same order as input, one per repo, each with:
+            {{
+            "name": "<repo name>",
+            "skills": ["list","key","skills"],
+            "relevance_score": 0.0,
+            "reasoning": "short, grounded explanation"
+            }}
+            Only return a valid JSON array.
+            """
             scored_list = self.generate_json(prompt, fallback=[])
             if not isinstance(scored_list, list):
                 # hard fallback: naive zeros

@@ -6,3 +6,9 @@ issue: 3n+1 total calls (n = no of repos), which explodes bill + increases
 issue: for efficient repo analysis we need to download whole repos, which can be 
        time consuming and not storage efficient
   fix: portia provides out of the box analysis in this case throughh it's cloud features, so then we dont need to download and parse repos manually
+
+issue: portia doesn't provide support for Gemini CLI
+  fix: removed portia
+
+issue: downloading repo and performing analysis on each can be time consuming and increases API cost and working directly with Github API increases overhead
+  fix: using PyGithub for seamless working with github and fetching files which are truly relevant not downloading the whole repo
