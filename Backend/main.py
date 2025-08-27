@@ -18,7 +18,8 @@ jd_text = """
 
 def main():
     fetcher = GitHubFetcher(github_token=GITHUB_TOKEN)
-    repos = fetcher.extract_many(include_user_repos=True,out_json=GITHUB_CACHE_FILE)
+
+    repos = fetcher.extract_many(out_json=GITHUB_CACHE_FILE)
     print(json.dumps(repos, indent=4))
 
 main()

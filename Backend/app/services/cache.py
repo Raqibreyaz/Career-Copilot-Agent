@@ -2,8 +2,10 @@ import logging
 import json
 import redis
 import functools
+import hashlib
 from dataclasses import dataclass
 from typing import Any, Dict, Optional
+from github import Repository
 
 DEFAULT_CACHE_TTL = 24 * 3600  # 1 day
 
@@ -30,11 +32,11 @@ class Cache:
             logger.debug(f"Cache get error: {e}")
             return None
 
-    def set(self, key: str, value: Any, ex: Optional[int] = None) -> None:
+    def set(self, key: str, value: Any, ttl: Optional[int] = None) -> None:
         try:
             payload = json.dumps(value)
             if self.client:
-                self.client.set(key, payload, ex=(ex or self.ttl))
+                self.client.set(key, payload, ex=(ttl or self.ttl))
             else:
                 self.fallback[key] = value
         except Exception as e:
@@ -42,6 +44,7 @@ class Cache:
 
 TTL_MAP= {
     "repos": 24 * 3600,
+    "repo": 24 * 3600,
     "topics": 24 * 3600,
     "dependencies": 12 * 3600,
     "languages": 7 * 24 * 3600,
@@ -60,20 +63,27 @@ def cache_key(*parts: str) -> str:
 
 def cached(category: str):
     def decorator(func):
-        def wrapper(self, repo, *args, **kwargs):
-            key = cache_key(category, repo.full_name, *args)
-
+        def wrapper(self, repo:Repository.Repository | str | None = None, *args, **kwargs):
+            if isinstance(repo,str): 
+                repo_name = repo
+            else: repo_name = repo.full_name if repo is not None else ""
+            
+            # TODO: bypass cache if repo was fetched before last commit
+            key = cache_key(category, repo_name, *args)
             cached = self.cache.get(key)
-            if cached is not None:
+            if cached:
                 return cached
 
+            if not repo and category != "repos":
+               raise RuntimeError(f"Repository instance required for category '{category}'")
+                
             try:
-                result = func(self, repo, *args, **kwargs)
+                result = func(self, repo, *args, **kwargs) if repo else func(self, *args, **kwargs)
                 self.cache.set(key, result,ttl=TTL_MAP.get(category,self.cache.ttl))
                 return result
 
             except Exception as e:
-                print(f"get {repo.full_name}: {e}") 
+                print(f"get {repo.full_name if repo else "repos"}: {e}") 
                 self.cache.set(key, None)
                 return None
 
